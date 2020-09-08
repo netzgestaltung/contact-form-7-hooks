@@ -1,6 +1,81 @@
 # Contact Form 7 Hooks
 
 Here you can find some [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) actions and filters (hooks) available for use. The last used version is 4.2.1.
+## Actions in /contact-form-7/includes/contact-form.php 
+
+- `wpcf7_contact_form`
+
+```php
+/**
+ * Fires after the $cf7 constructor was called
+ *
+ * @param $cf7  class object
+ */
+function action_wpcf7_contact_form( $cf7 ) {     
+  // do some action
+};
+add_action( 'wpcf7_contact_form', 'action_wpcf7_contact_form'); 
+```
+
+
+- `wpcf7_submit`
+
+```php
+/**
+ * Fires after a form has been submitted
+ *
+ * @param $cf7  class object
+ * @param $result  named array 'contact_form_id', 'status', 'message', 'demo_mode'
+ */
+function action_wpcf7_submit( $cf7, $result ) {     
+  // do some action
+};
+add_action( 'wpcf7_submit', 'action_wpcf7_submit', 10, 2 ); 
+```
+
+- `wpcf7_after_create`
+
+```php
+/**
+ * Fires after a $cf7 form was created
+ *
+ * @param $cf7  class object
+ */
+function action_wpcf7_after_create( $cf7 ) {     
+  // do some action
+};
+add_action( 'wpcf7_after_create', 'action_wpcf7_after_create'); 
+```
+
+- `wpcf7_after_update`
+
+```php
+/**
+ * Fires after a $cf7 form was updated
+ *
+ * @param $cf7  class object
+ */
+function action_wpcf7_after_update( $cf7 ) {     
+  // do some action
+};
+add_action( 'wpcf7_after_update', 'action_wpcf7_after_update'); 
+```
+
+
+- `wpcf7_after_save`
+
+```php
+/**
+ * Fires after a $cf7 form was saved
+ *
+ * @param $cf7  class object
+ */
+function action_wpcf7_after_save( $cf7 ) {     
+  // do some action
+};
+add_action( 'wpcf7_after_save', 'action_wpcf7_after_save'); 
+```
+
 
 ## Filters in /contact-form-7/includes/contact-form.php 
 
