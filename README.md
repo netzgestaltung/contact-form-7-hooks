@@ -34,6 +34,20 @@ add_filter('wpcf7_contact_form_properties', function($properties, $cf7) {
 });
 ```
 
+- `wpcf7_subscribers_only_notice`
+
+```php
+/**
+ * Used to change the form subscribers only notice
+ *
+ * @param $notice subscribers only notice
+ * @return string The new notice you want
+ */
+add_filter('wpcf7_subscribers_only_notice', function($notice, $cf7) {
+    return $notice;
+});
+```
+
 - `wpcf7_form_action_url`
 
 ```php
@@ -104,6 +118,21 @@ add_filter('wpcf7_form_enctype', function($html_enctype = '') {
 });
 ```
 
+
+- `wpcf7_form_autocomplete`
+
+```php
+/**
+ * Change de form autocomplete attribute
+ *
+ * @param $autocomplete An empty string
+ * @return string The new autocomplete attribute "autocomplete"
+ */
+add_filter('wpcf7_form_autocomplete', function($autocomplete = '') {
+    return $autocomplete;
+});
+```
+
 - `wpcf7_form_novalidate`
 
 ```php
@@ -115,6 +144,20 @@ add_filter('wpcf7_form_enctype', function($html_enctype = '') {
  */
 add_filter('wpcf7_form_novalidate', function($support_html5) {
     return null;
+});
+```
+
+- `wpcf7_form_hidden_fields`
+
+```php
+/**
+ * Filter hidden fields
+ *
+ * @param $hidden_fields  An empty array()
+ * @return array  Array with will be looped with: foreach ( $hidden_fields as $name => $value )
+ */
+add_filter('wpcf7_form_hidden_fields', function($hidden_fields = array()) {
+    return $hidden_fields;
 });
 ```
 
@@ -163,5 +206,81 @@ function filter_wpcf7_form_elements( $elements ) {
     return $elements; 
 };
 add_filter( 'wpcf7_form_elements', 'filter_wpcf7_form_elements', 10, 3 ); 
+```
+
+
+- `wpcf7_collect_mail_tags`
+
+```php
+/**
+ * Return all visible form mail tags
+ *
+ * @return $mailtags
+ */
+function filter_wpcf7_collect_mail_tags( $mailtags, $args, $cf7 ) {     
+    return $mailtags;
+};
+add_filter( 'wpcf7_collect_mail_tags', 'filter_wpcf7_collect_mail_tags', 10, 3 ); 
+```
+
+
+- `wpcf7_display_message`
+
+```php
+/**
+ * Return display messaged based on status
+ *
+ * @return $message  string with the display messages
+ */
+function filter_wpcf7_display_message( $message, $status ) {     
+    return $message;
+};
+add_filter( 'wpcf7_display_message', 'filter_wpcf7_display_message', 10, 2 ); 
+```
+
+
+- `wpcf7_verify_nonce`
+
+```php
+/**
+ * Description
+ *
+ * @return $is_active  boolean 
+ */
+function filter_wpcf7_display_message( $is_active, $cf7 ) {     
+    return $is_active;
+};
+add_filter( 'wpcf7_verify_nonce', 'filter_wpcf7_verify_nonce', 10, 2 ); 
+```
+
+
+- `wpcf7_copy`
+
+```php
+/**
+ * Return new copy of form
+ *
+ * @return $new  $cf7 class object 
+ */
+function filter_wpcf7_display_message( $new, $cf7 ) {     
+    return $new;
+};
+add_filter( 'wpcf7_copy', 'filter_wpcf7_copy', 10, 2 ); 
+```
+
+
+
+- `wpcf7_contact_form_shortcode`
+
+```php
+/**
+ * Return shortcode
+ *
+ * @return $shortcode  string  shortcode
+ */
+function filter_wpcf7_display_message( $shortcode, $args, $cf7 ) {     
+    return $shortcode;
+};
+add_filter( 'wpcf7_contact_form_shortcode', 'filter_wpcf7_contact_form_shortcode', 10, 3 ); 
 ```
 
