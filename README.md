@@ -2,7 +2,7 @@
 
 Here you can find some [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) actions and filters (hooks) available for use. The last used version is 4.2.1.
 
-## Filters
+## Filters in /contact-form-7/includes/contact-form.php 
 
 - `wpcf7_contact_form_default_pack`
 
@@ -284,3 +284,76 @@ function filter_wpcf7_display_message( $shortcode, $args, $cf7 ) {
 add_filter( 'wpcf7_contact_form_shortcode', 'filter_wpcf7_contact_form_shortcode', 10, 3 ); 
 ```
 
+## Filters in /contact-form-7/includes/formatting.php 
+
+
+- `wpcf7_is_email`
+
+```php
+/**
+ * Return if a field is an email field
+ *
+ * @return $result  boolean
+ */
+function filter_wpcf7_is_email( $result, $email ) {     
+    return $result;
+};
+add_filter( 'wpcf7_is_email', 'filter_wpcf7_is_email', 10, 2 ); 
+```
+
+- `wpcf7_is_email`
+
+```php
+/**
+ * Return if a field is an URL field
+ *
+ * @return $result  boolean
+ */
+function filter_wpcf7_is_url( $result, $url ) {     
+    return $result;
+};
+add_filter( 'wpcf7_is_url', 'filter_wpcf7_is_url', 10, 2 ); 
+```
+
+- `wpcf7_is_tel`
+
+```php
+/**
+ * Return if a field is a telephone field
+ *
+ * @return $result  boolean
+ */
+function filter_wpcf7_is_tel( $result, $tel ) {     
+    return $result;
+};
+add_filter( 'wpcf7_is_tel', 'filter_wpcf7_is_tel', 10, 2 ); 
+```
+
+
+- `wpcf7_is_number`
+
+```php
+/**
+ * Return if a field is a number field
+ *
+ * @return $result  boolean
+ */
+function filter_wpcf7_is_number( $result, $number ) {     
+    return $result;
+};
+add_filter( 'wpcf7_is_number', 'filter_wpcf7_is_number', 10, 2 ); 
+```
+
+- `wpcf7_is_number`
+
+```php
+/**
+ * Return if a field is a date field
+ *
+ * @return $result  boolean
+ */
+function filter_wpcf7_is_date( $result, $date ) {     
+    return $result;
+};
+add_filter( 'wpcf7_is_date', 'filter_wpcf7_is_date', 10, 2 ); 
+```
