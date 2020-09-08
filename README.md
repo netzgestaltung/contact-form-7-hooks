@@ -269,7 +269,6 @@ add_filter( 'wpcf7_copy', 'filter_wpcf7_copy', 10, 2 );
 ```
 
 
-
 - `wpcf7_contact_form_shortcode`
 
 ```php
@@ -283,6 +282,39 @@ function filter_wpcf7_display_message( $shortcode, $args, $cf7 ) {
 };
 add_filter( 'wpcf7_contact_form_shortcode', 'filter_wpcf7_contact_form_shortcode', 10, 3 ); 
 ```
+
+## Filters in /contact-form-7/includes/form-tag.php 
+
+- `wpcf7_form_tag_data_option`
+
+```php
+/**
+ * Return options for tag data
+ *
+ * @return $options  array  
+ */
+function filter_wpcf7_form_tag_data_option( $varx = null, $options, $args ) {     
+    return $options;
+};
+add_filter( 'wpcf7_form_tag_data_option', 'filter_wpcf7_form_tag_data_option', 10, 3 ); 
+```
+
+## Filters in /contact-form-7/includes/form-tags-manager.php 
+
+- `wpcf7_form_tag`
+
+```php
+/**
+ * Return scanned_tag 
+ *
+ * @return $scanned_tag  array  
+ */
+function filter_wpcf7_form_tag( $scanned_tag, $replace ) {     
+    return $scanned_tag;
+};
+add_filter( 'wpcf7_form_tag', 'filter_wpcf7_form_tag', 10, 2 ); 
+```
+
 
 ## Filters in /contact-form-7/includes/formatting.php 
 
