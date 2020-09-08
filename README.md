@@ -4,7 +4,7 @@
 Here you can find some [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) actions and filters (hooks) available for use. The last used version is 4.2.1.
 
  - [Actions in
-   /contact-form-7/includes/contact-form.php](#user-content-actions-in-contact-form-7includescontact-form.php)
+   /contact-form-7/includes/contact-form.php](#user-content-actions-in-contact-form-7includescontact-formphp)
 - [Filters in
    /contact-form-7/includes/contact-form.php](#user-content-filters-in-contact-form-7includescontact-formphp)
 - [Filters in
