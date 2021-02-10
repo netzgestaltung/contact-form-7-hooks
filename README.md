@@ -294,7 +294,14 @@ add_filter('wpcf7_validation_error', function($error, $name, $cf7) {
 function filter_wpcf7_form_elements( $elements ) {     
     return $elements; 
 };
-add_filter( 'wpcf7_form_elements', 'filter_wpcf7_form_elements', 10, 3 ); 
+add_filter( 'wpcf7_form_elements', 'filter_wpcf7_form_elements' ); 
+
+// Example
+// Handle required input attribute
+function filter_wpcf7_form_elements($elements){
+  return str_replace(' aria-required', ' required aria-required', $elements);
+}
+
 ```
 
 
